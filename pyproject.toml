@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "{{ project_name }}"
+dynamic = ["version"]
+description = "Describe your project in one sentence."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "{{ project_name }} team", email = "development@example.com" }]
+classifiers = [
+  "Environment :: Web Environment",
+  "Intended Audience :: Developers",
+  "License :: Other/Proprietary License",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Private :: Do Not Upload",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+  "Topic :: Internet :: WWW/HTTP :: WSGI",
+]
+dependencies = [
+  "django=={{ django_version }}",
+  "python-decouple>=3.8,<4",
+  "django-extensions>=3.2.3,<4"
+]
+
+[project.optional-dependencies]
+dev = [
+  "django-debug-toolbar>=4.3.0,<5",
+  "ipython>=8.23.0,<9",
+]
+
+[project.scripts]
+{{ project_name }} = "django.core.management:execute_from_command_line"
+
+[project.urls]
+Homepage = "https://www.example.com/"
+
+[tool.hatch.version]
+path = "./src/{{ project_name }}/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = ["/src"]
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "B",  # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+    "W191",  # indentation contains tabs
+]
