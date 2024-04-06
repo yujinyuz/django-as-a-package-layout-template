@@ -29,6 +29,24 @@ python3 -m django startproject --extension=gitignore,gitkeep,md,toml \
     <project_name> [directory]
 ```
 
+Or you can also use [pipx](https://github.com/pypa/pipx)
+
+```console
+pipx run django startproject --extension=gitignore,gitkeep,md,toml \
+    --exclude=docs \
+    --template=https://github.com/yujinyuz/django-as-a-package-layout-template/archive/master.zip \
+    <project_name> [directory]
+```
+
+Or specify a Django version
+
+```console
+pipx run --spec "Django==4.*" django-admin startproject --extension=gitignore,gitkeep,md,toml \
+    --exclude=docs \
+    --template=https://github.com/yujinyuz/django-as-a-package-layout-template/archive/master.zip \
+    <project_name> [directory]
+```
+
 _Tip: If you want to create the project in your current working directory use `.` as directory argument._
 
 ## License
