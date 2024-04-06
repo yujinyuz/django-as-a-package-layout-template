@@ -53,7 +53,6 @@ Install the project and the development dependencies into a [virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
 
-python -m pip install --upgrade pip hatchling
 python3 -m pip install --editable ".[dev]"
 
 ./manage.py migrate
@@ -86,7 +85,8 @@ Also see [How to use Django with Gunicorn](https://docs.djangoproject.com/en/{{ 
 1.  Add your favorite WSGI HTTP server, e.g.  [Gunicorn](https://gunicorn.org/), to `project.dependencies` in `pyproject.toml`.
 2.  [Build](https://packaging.python.org/tutorials/packaging-projects/#generating-distribution-archives) a [wheel](https://github.com/pypa/wheel) of the project.
     ```console
-    hatch build
+    pip install build
+    python -m build
     ```
 4.  Copy the wheel file from the `dist` directory to the server to be deployed.
 5.  Create a minimal configuration on the server using environment variables.
