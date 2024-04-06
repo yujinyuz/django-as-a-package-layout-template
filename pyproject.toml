@@ -12,6 +12,7 @@ requires-python = ">=3.10"
 authors = [{ name = "{{ project_name }} team", email = "development@example.com" }]
 classifiers = [
   "Environment :: Web Environment",
+  "Framework :: Django :: {{ docs_version }}",
   "Intended Audience :: Developers",
   "License :: Other/Proprietary License",
   "Natural Language :: English",
