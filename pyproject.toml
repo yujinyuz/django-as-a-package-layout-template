@@ -48,6 +48,9 @@ path = "./src/{{ project_name }}/__init__.py"
 [tool.hatch.build.targets.sdist]
 include = ["/src"]
 
+[tool.ruff.format]
+quote-style = 'single'
+
 [tool.ruff.lint]
 select = [
     "E",  # pycodestyle errors
