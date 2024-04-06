@@ -24,6 +24,7 @@ Use the following [startproject](https://docs.djangoproject.com/en/stable/ref/dj
 
 ```console
 python3 -m django startproject --extension=gitignore,gitkeep,md,toml \
+    --exclude=docs \
     --template=https://github.com/yujinyuz/django-as-a-package-layout-template/archive/master.zip \
     <project_name> [directory]
 ```
@@ -35,6 +36,13 @@ _Tip: If you want to create the project in your current working directory use `.
 Distributed under the [MIT License](https://opensource.org/licenses/MIT).
 
 Copyright 2024 Eugene Oliveros
+
+## Acknowledgements
+
+- [keimlink/django-project-package-template](https://github.com/keimlink/django-project-package-template)
+
+  This template was based from this repository but I made a few changes to conform with new build
+  packages such as hatch instead of setuptools, pyproject.toml instead of setup.cfg
 
 _All text below the horizontal line is the template for the new project's README._
 
